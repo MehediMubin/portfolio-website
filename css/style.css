@@ -4,19 +4,23 @@ body {
 }
 
 .first-section {
-	display: flex;
 	background-image: url(../images/top-banner.png);
 	background-repeat: no-repeat;
+	margin-bottom: 40px;
+}
+
+.flexing {
+	display: flex;
 }
 
 .half-width {
 	margin-top: 20px;
-	width: 50%;
+	width: 45%;
 	margin-left: 5%;
 }
 
 .half-width img {
-	width: 85%;
+	width: 90%;
 }
 
 .first-section h1 {
@@ -31,7 +35,7 @@ body {
 	text-align: justify;
 }
 
-.first-section span {
+.orange-color {
 	color: orange;
 }
 
@@ -41,4 +45,67 @@ body {
 	padding: 10px 35px;
 	background-image: linear-gradient(salmon, tomato);
 	border-radius: 5px;
+}
+
+.second-section {
+	background-image: url(../images/dream-bg.png);
+	background-repeat: no-repeat;
+	background-position: right;
+	margin-bottom: 40px;
+}
+
+.second-section h2 {
+	font-size: 40px;
+}
+
+.second-section p {
+	text-align: justify;
+}
+
+.second-section .half-width {
+	width: 45%;
+}
+
+#other-half {
+	width: 36%;
+}
+
+.third-section {
+	margin-bottom: 40px;
+    background-image: url(../images/exp-bg.png);
+    background-repeat: no-repeat;
+}
+
+.third-section h1 {
+	font-size: 40px;
+	margin-left: 60px;
+}
+
+.third-section h2 {
+	font-size: 30px;
+}
+
+.third-section h3 {
+	font-size: 20px;
+}
+
+.boxing {
+	border-radius: 10px;
+	padding: 15px;
+	text-align: justify;
+	box-shadow: 20px 30px 50px grey;
+	border-image-slice: 1;
+	width: 42%;
+}
+
+#boxing1 {
+	border-left: 5px solid tomato;
+}
+
+#boxing2 {
+	border-left: 5px solid blue;
+}
+
+.third-section {
+    bac
 }
