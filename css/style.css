@@ -1,0 +1,44 @@
+body {
+	font-family: "Open Sans", sans-serif;
+	margin: 0;
+}
+
+.first-section {
+	display: flex;
+	background-image: url(../images/top-banner.png);
+	background-repeat: no-repeat;
+}
+
+.half-width {
+	margin-top: 20px;
+	width: 50%;
+	margin-left: 5%;
+}
+
+.half-width img {
+	width: 85%;
+}
+
+.first-section h1 {
+	font-size: 55px;
+}
+
+.first-section h2 {
+	font-size: 45px;
+}
+
+.first-section p {
+	text-align: justify;
+}
+
+.first-section span {
+	color: orange;
+}
+
+.button {
+	text-decoration: none;
+	color: whitesmoke;
+	padding: 10px 35px;
+	background-image: linear-gradient(salmon, tomato);
+	border-radius: 5px;
+}
