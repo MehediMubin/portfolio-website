@@ -8,7 +8,7 @@ const App = () => {
         <div className="max-w-screen-xl font-custom">
             <Navbar />
             <Header />
-            <Skills/>
+            <Skills />
         </div>
     );
 };

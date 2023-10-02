@@ -1,5 +1,4 @@
 import Lottie from "lottie-react";
-import React from "react";
 import {
     FaFacebookF,
     FaInstagram,
@@ -10,7 +9,7 @@ import programmer from "../assets/programmer.json";
 
 const Header = () => {
     return (
-        <div className="flex justify-around items-center gap-10 w-screen p-10 h-screen mt-8">
+        <div className="flex justify-around items-center gap-10 w-auto pl-10 h-screen mt-8 mb-8">
             <div className="w-4/6">
                 <h1 className="uppercase text-3xl font-bold tracking-wide text-gray-800 mb-5">
                     Welcome to My <span className="text-[#FF2E00]">World</span>
