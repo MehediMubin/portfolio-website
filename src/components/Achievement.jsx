@@ -2,13 +2,13 @@ import Lottie from "lottie-react";
 import achievement from "../assets/achievement.json";
 
 import { AiFillTrophy } from "react-icons/ai";
-// AiFillTrophy
 
 const Achievement = () => {
     return (
         <div className="h-screen flex pl-12 gap-10 items-center">
-            {/* Summer - June
-            Spring - February */}
+            <div className="w-full lg:w-4/6">
+                <Lottie animationData={achievement} loop={false} />
+            </div>
             <div className="w-4/6">
                 <h2 className="text-3xl uppercase rounded  mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
                     <span className="text-[#FF2E00]">Achievements</span>
@@ -43,9 +43,6 @@ const Achievement = () => {
                         in Bangladesh.
                     </p>
                 </div>
-            </div>
-            <div className="w-full lg:w-4/6">
-                <Lottie animationData={achievement} loop={false} />
             </div>
         </div>
     );

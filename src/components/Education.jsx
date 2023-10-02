@@ -3,7 +3,7 @@ import logo from "../assets/logo.svg";
 
 const Education = () => {
     return (
-        <div className="h-auto pl-10">
+        <div className="h-auto pl-10 mb-20">
             <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-8 font-semibold tracking-wider bg-gray-300 py-1 px-2">
                 Education
             </h2>

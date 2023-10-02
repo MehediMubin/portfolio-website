@@ -72,6 +72,11 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li>
+                            <a className="hover:text-[#FF2E00]" href="#">
+                                Experience
+                            </a>
+                        </li>
+                        <li>
                             <a className="hover:text-[#FF2E00]">Achievement</a>
                         </li>
                         <li>

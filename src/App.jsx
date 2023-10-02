@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Achievement from "./components/Achievement";
+import Experience from "./components/Experience";
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
             <Header />
             <Skills />
             <Education/>
+            <Experience/>
             <Achievement/>
         </div>
     );
