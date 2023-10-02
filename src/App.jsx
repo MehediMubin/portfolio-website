@@ -5,7 +5,7 @@ import Skills from "./components/Skills";
 
 const App = () => {
     return (
-        <div className="max-w-screen-xl mx-auto font-custom">
+        <div className="max-w-screen-xl font-custom">
             <Navbar />
             <Header />
             <Skills/>

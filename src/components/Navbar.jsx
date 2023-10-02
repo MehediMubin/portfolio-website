@@ -3,8 +3,8 @@ import image from "../assets/signature.png";
 
 const Navbar = () => {
     return (
-        <div>
-            <div className="navbar bg-base-100 shadow-lg font-semibold">
+        <div className="w-full">
+            <div className="navbar bg-base-100 font-semibold fixed top-0 z-50 w-full shadow-lg shadow-indigo-500/50">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -57,7 +57,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="normal-case text-xl">
+                    <a className="normal-case text-xl hover:cursor-pointer" href="/">
                         <img className="w-60" src={image} alt="" />
                     </a>
                 </div>
