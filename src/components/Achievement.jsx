@@ -5,7 +5,7 @@ import { AiFillTrophy } from "react-icons/ai";
 
 const Achievement = () => {
     return (
-        <div className="h-screen flex pl-12 gap-10 items-center">
+        <div id="achievement" className="h-screen flex pl-12 gap-10 items-center">
             <div className="w-full lg:w-4/6">
                 <Lottie animationData={achievement} loop={false} />
             </div>

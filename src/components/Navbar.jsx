@@ -28,64 +28,89 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                         >
                             <li>
-                                <a className="hover:text-[#FF2E00] mb-1">
+                                <a
+                                    className="hover:text-[#FF2E00] mb-1"
+                                    href="#skills"
+                                >
                                     Skills
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    className="hover:text-[#FF2E00] mb-1"
-                                    href="#"
+                                    className="hover:text-[#FF2E00] mb-1 "
+                                    href="#education"
                                 >
                                     Education
                                 </a>
                             </li>
                             <li>
-                                <a className="hover:text-[#FF2E00] mb-1">
+                                <a
+                                    className="hover:text-[#FF2E00] mb-1"
+                                    href="#experience"
+                                >
+                                    Experience
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className="hover:text-[#FF2E00] mb-1"
+                                    href="#achievement"
+                                >
                                     Achievement
                                 </a>
                             </li>
                             <li>
-                                <a className="hover:text-[#FF2E00] mb-1">
-                                    Problem Solving
-                                </a>
-                            </li>
-                            <li>
-                                <a className="hover:text-[#FF2E00]">
+                                <a
+                                    className="hover:text-[#FF2E00]"
+                                    href="#contact"
+                                >
                                     Contact Me
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <a className="normal-case text-xl hover:cursor-pointer" href="/">
+                    <a
+                        className="normal-case text-xl hover:cursor-pointer"
+                        href="/"
+                    >
                         <img className="w-60" src={image} alt="" />
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-[15px]">
                         <li>
-                            <a className="hover:text-[#FF2E00]">Skills</a>
+                            <a className="hover:text-[#FF2E00]" href="#skills">
+                                Skills
+                            </a>
                         </li>
                         <li>
-                            <a className="hover:text-[#FF2E00]" href="#">
+                            <a
+                                className="hover:text-[#FF2E00]"
+                                href="#education"
+                            >
                                 Education
                             </a>
                         </li>
                         <li>
-                            <a className="hover:text-[#FF2E00]" href="#">
+                            <a
+                                className="hover:text-[#FF2E00]"
+                                href="#experience"
+                            >
                                 Experience
                             </a>
                         </li>
                         <li>
-                            <a className="hover:text-[#FF2E00]">Achievement</a>
-                        </li>
-                        <li>
-                            <a className="hover:text-[#FF2E00]">
-                                Problem Solving
+                            <a
+                                className="hover:text-[#FF2E00]"
+                                href="#achievement"
+                            >
+                                Achievement
                             </a>
                         </li>
                         <li>
-                            <a className="hover:text-[#FF2E00]">Contact Me</a>
+                            <a className="hover:text-[#FF2E00]" href="#contact">
+                                Contact Me
+                            </a>
                         </li>
                     </ul>
                 </div>

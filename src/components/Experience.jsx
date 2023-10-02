@@ -3,7 +3,7 @@ import experience from '../assets/Experience.json'
 
 const Experience = () => {
     return (
-        <div className="h-screen pl-11 flex items-center gap-5">
+        <div id='experience' className="h-screen pl-11 flex items-center gap-5">
             <div className='w-4/6'>
                 <h2 className="text-3xl uppercase rounded  mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
                     <span className="text-[#FF2E00]">Experiences</span>
