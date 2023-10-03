@@ -19,10 +19,7 @@ const Contact = () => {
     };
 
     return (
-        <div
-            id="contact"
-            className="flex items-center pl-16 h-screen mb-3"
-        >
+        <div id="contact" className="flex items-center pl-16 h-screen mb-3">
             <ToastContainer
                 position="top-center"
                 autoClose={3000}
@@ -36,6 +33,9 @@ const Contact = () => {
                 theme="light"
             />
             <div className="w-full lg:w-3/6">
+                <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2">
+                    Contact Me
+                </h2>
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
