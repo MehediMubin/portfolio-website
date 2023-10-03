@@ -5,7 +5,10 @@ import skills from "../assets/Skills.json";
 
 const Skills = () => {
     return (
-        <div id="skills" className="h-screen flex items-center gap-20 w-auto pl-12 mb-28">
+        <div
+            id="skills"
+            className="h-screen flex items-center gap-20 w-auto pl-12 mb-28"
+        >
             <div className="w-full lg:w-3/6">
                 <Lottie animationData={skills} loop={false} />
             </div>
