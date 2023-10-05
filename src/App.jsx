@@ -13,12 +13,12 @@ const App = () => {
         <div className="font-custom">
             <Navbar />
             <Header />
-            <Skills />
-            <Education/>
-            <Experience/>
-            <Achievement/>
-            <Contact/>
-            <Footer/>
+            {/* <Skills /> */}
+            {/* <Education/> */}
+            {/* <Experience/> */}
+            {/* <Achievement/> */}
+            {/* <Contact/> */}
+            {/* <Footer/> */}
         </div>
     );
 };
