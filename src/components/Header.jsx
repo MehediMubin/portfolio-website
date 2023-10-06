@@ -5,6 +5,7 @@ import {
     FaLinkedin,
     FaTwitter,
 } from "react-icons/fa";
+import {AiFillGithub} from 'react-icons/ai'
 import programmer from "../assets/programmer.json";
 
 const Header = () => {
@@ -41,12 +42,12 @@ const Header = () => {
                         <FaFacebookF className="text-md" />
                     </a>
                     <a
-                        className="btn text-red-600 hover:bg-purple-700 hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-5 py-3 rounded mr-3"
-                        href="https://www.instagram.com/___m_u_b_i_n___/"
+                        className="btn text-[#1f2328] hover:bg-purple-700 hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-5 py-3 rounded mr-3"
+                        href="https://github.com/MehediMubin/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <FaInstagram className="text-md" />
+                        <AiFillGithub className="text-md" />
                     </a>
                     <a
                         className="btn text-[#0a66c2] hover:bg-purple-700 hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-5 py-3 rounded mr-3"
