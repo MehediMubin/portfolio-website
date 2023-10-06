@@ -7,7 +7,7 @@ const Achievement = () => {
     return (
         <div
             id="achievement"
-            className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen"
+            className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-16 lg:mb-0"
         >
             <div className="w-full md:w-3/6 p-1">
                 <Lottie animationData={achievement} loop={false} />

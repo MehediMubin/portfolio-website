@@ -17,8 +17,8 @@ const App = () => {
             <Education/>
             <Experience/>
             <Achievement/>
-            {/* <Contact/> */}
-            {/* <Footer/> */}
+            <Contact/>
+            <Footer/>
         </div>
     );
 };

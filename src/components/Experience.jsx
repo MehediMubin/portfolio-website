@@ -5,7 +5,7 @@ const Experience = () => {
     return (
         <div
             id="experience"
-            className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-10 md:mb-0"
+            className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-16 lg:mb-0"
         >
             <div className="text-center md:text-left w-full md:w-4/6 px-2 md:px-10">
                 <h2 className="text-3xl uppercase rounded mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
