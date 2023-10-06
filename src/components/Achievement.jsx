@@ -5,13 +5,18 @@ import { AiFillTrophy } from "react-icons/ai";
 
 const Achievement = () => {
     return (
-        <div id="achievement" className="h-screen flex pl-12 gap-10 items-center">
-            <div className="w-full lg:w-4/6">
+        <div
+            id="achievement"
+            className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen"
+        >
+            <div className="w-full md:w-3/6 p-1">
                 <Lottie animationData={achievement} loop={false} />
             </div>
-            <div className="w-4/6">
+            <div className="text-center md:text-left md:w-4/6 px-10 w-full">
                 <h2 className="text-3xl uppercase rounded  mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
-                    <span className="text-[#FF2E00]">Achievements</span>
+                    <span className="text-[#FF2E00]">
+                        Achievements
+                    </span>
                     <AiFillTrophy className="text-[#E3CA00]" />
                 </h2>
 
@@ -22,7 +27,7 @@ const Achievement = () => {
                     <h4 className="text-xl tracking-wider">
                         ULAB Take Off Programming Contest
                     </h4>
-                    <p className="text-lg tracking-wide">June, 2021</p>
+                    <p className="text-md tracking-wide">June, 2021</p>
                 </div>
                 <div className="mb-3">
                     <h3 className="text-2xl tracking-wide font-semibold text-[#FF2E00]">
@@ -31,7 +36,7 @@ const Achievement = () => {
                     <h4 className="text-xl tracking-wider">
                         ULAB Take Off Programming Contest
                     </h4>
-                    <p className="text-lg tracking-wide">February, 2021</p>
+                    <p className="text-md tracking-wide">February, 2021</p>
                 </div>
                 <div>
                     <h3 className="text-2xl font-semibold text-[#FF2E00]">

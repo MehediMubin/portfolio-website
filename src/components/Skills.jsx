@@ -7,12 +7,12 @@ const Skills = () => {
     return (
         <div
             id="skills"
-            className="md:h-screen flex flex-col-reverse lg:flex-row justify-center items-center gap-10 mb-20"
+            className="lg:h-screen flex flex-col-reverse md:flex-row justify-center items-center gap-10 mb-20"
         >
-            <div className=" w-full lg:w-3/6 p-2">
+            <div className=" w-full md:w-3/6 p-2">
                 <Lottie animationData={skills} loop={false} />
             </div>
-            <div className="text-center lg:text-left w-full lg:w-4/6 p-10">
+            <div className="text-center md:text-left w-full md:w-4/6 p-10">
                 <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 ">
                     Skills
                 </h2>
@@ -67,14 +67,14 @@ const Skills = () => {
                     <span className="text-[#e83923] w-5">
                         <AiFillThunderbolt />
                     </span>
-                    Algorithmic Problem Solving (Solved 2000+ problems on
+                    Amdorithmic Problem Solving (Solved 2000+ problems on
                     various online platforms)
                 </p>
                 <p className="mb-3 flex items-center gap-1 tracking-wider">
                     <span className="text-[#e83923] w-5">
                         <AiFillThunderbolt />
                     </span>
-                    Data Structure & Algorithms
+                    Data Structure & Amdorithms
                 </p>
                 <p className="mb-3 flex items-center gap-1 tracking-wider">
                     <span className="text-[#e83923] w-5">
