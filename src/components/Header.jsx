@@ -67,7 +67,7 @@ const Header = () => {
                 </div>
             </div>
             <div className="w-full md:w-3/6 p-1">
-                <Lottie animationData={programmer} loop={false} />
+                <Lottie animationData={programmer} loop={true} />
             </div>
         </div>
     );

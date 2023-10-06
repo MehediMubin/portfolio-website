@@ -10,7 +10,7 @@ const Achievement = () => {
             className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-16 lg:mb-0"
         >
             <div className="w-full md:w-3/6 p-1">
-                <Lottie animationData={achievement} loop={false} />
+                <Lottie animationData={achievement} loop={true} />
             </div>
             <div className="text-center md:text-left md:w-4/6 px-10 w-full">
                 <h2 className="text-3xl uppercase rounded  mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">

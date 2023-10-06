@@ -69,7 +69,7 @@ const Contact = () => {
                 </form>
             </div>
             <div className="w-full md:w-3/6 p-1">
-                <Lottie animationData={contact} loop={false} />
+                <Lottie animationData={contact} loop={true} />
             </div>
         </div>
     );

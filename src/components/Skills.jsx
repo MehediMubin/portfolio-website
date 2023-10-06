@@ -10,7 +10,7 @@ const Skills = () => {
             className="lg:h-screen flex flex-col-reverse md:flex-row justify-center items-center gap-10 mb-20"
         >
             <div className=" w-full md:w-3/6 p-2">
-                <Lottie animationData={skills} loop={false} />
+                <Lottie animationData={skills} loop={true} />
             </div>
             <div className="text-center md:text-left w-full md:w-4/6 p-10">
                 <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 ">
