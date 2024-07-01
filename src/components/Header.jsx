@@ -1,16 +1,14 @@
 import Lottie from "lottie-react";
 import { AiFillGithub } from "react-icons/ai";
-import {
-   FaFacebookF,
-   FaInstagram,
-   FaLinkedin,
-   FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import programmer from "../assets/programmer.json";
 
 const Header = () => {
    return (
-      <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-10 lg:mb-0">
+      <div
+         className="flex flex-col-reverse md:flex-row justify-center items-center gap-10 lg:h-screen mb-10 lg:mb-0"
+         id="header"
+      >
          <div className="text-center md:text-left w-full md:w-4/6 px-10">
             <h1 className="uppercase text-3xl font-bold tracking-wide text-gray-800 mb-5">
                Welcome to My <span className="text-[#FF2E00]">World</span>
