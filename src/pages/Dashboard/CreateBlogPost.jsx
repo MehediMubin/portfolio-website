@@ -4,7 +4,7 @@ import { toast } from "sonner";
 const CreateBlogPost = () => {
    const { register, handleSubmit } = useForm();
 
-   const onSubmit = async (data) => {
+   const onSubmit = async (data, e) => {
       try {
          const token = localStorage.getItem("token"); // Retrieve the token from localStorage
          const response = await fetch(
@@ -18,9 +18,8 @@ const CreateBlogPost = () => {
                body: JSON.stringify(data),
             }
          );
-         const responseData = await response.json();
-         console.log(responseData);
-         // Handle success response
+         await response.json();
+         e.target.reset();
          toast.success("Blog posted successfully!");
       } catch (error) {
          console.error("Error posting blog:", error);
