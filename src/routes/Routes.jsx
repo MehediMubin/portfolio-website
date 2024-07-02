@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
 import MainLayout from "../layouts/MainLayout";
 import AddExperience from "../pages/Dashboard/AddExperience";
+import AddProject from "../pages/Dashboard/AddProject";
+import AddSkill from "../pages/Dashboard/AddSkill";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/add-experience",
             element: <AddExperience />,
+         },
+         {
+            path: "/dashboard/add-project",
+            element: <AddProject />,
+         },
+         {
+            path: "/dashboard/add-skill",
+            element: <AddSkill />,
          },
       ],
    },
