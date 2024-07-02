@@ -43,6 +43,10 @@ export const router = createBrowserRouter([
             element: <CreateBlogPost />,
          },
          {
+            path: "/dashboard/blogs",
+            element: <BlogPage />,
+         },
+         {
             path: "/dashboard/add-experience",
             element: <AddExperience />,
          },

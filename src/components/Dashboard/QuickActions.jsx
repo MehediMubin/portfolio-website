@@ -7,7 +7,7 @@ const QuickActions = () => (
          <ActionButton
             color="blue"
             text="Add Blog Post"
-            url="/dashboard/create-blog-post"
+            url="/dashboard/blogs"
          />
          <ActionButton
             color="green"
