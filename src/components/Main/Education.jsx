@@ -1,5 +1,5 @@
-// import image from "../assets/1511_logo.jpg";
-// import logo from "../assets/logo.svg";
+import image from "../../assets/1511_logo.jpg";
+import logo from "../../assets/logo.svg";
 
 const Education = () => {
     return (
