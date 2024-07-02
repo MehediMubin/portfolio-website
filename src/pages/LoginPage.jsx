@@ -1,18 +1,29 @@
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useLoginMutation } from "../redux/features/auth/authApi";
+import { setUser } from "../redux/features/auth/authSlice";
 
 const LoginPage = () => {
+   const dispatch = useDispatch();
    const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
-   const [login, { data, error }] = useLoginMutation();
+   const [login, { error }] = useLoginMutation();
 
    const onSubmit = async (data) => {
       console.log(data);
       try {
-         await login(data);
+         const res = await login(data).unwrap();
+         console.log(res);
+         dispatch(
+            setUser({
+               user: {},
+               token: res?.data?.accessToken,
+            })
+         );
          navigate("/dashboard");
+         toast.success("Login successful");
       } catch (error) {
          toast.error("Invalid credentials");
       }
