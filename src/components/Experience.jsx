@@ -55,7 +55,7 @@ const Experience = () => {
                 </div>
             </div>
             <div className="w-full md:w-4/6 p-1">
-                <Lottie animationData={experience} loop={true} />
+                {/* <Lottie animationData={experience} loop={true} /> */}
             </div>
         </div>
     );

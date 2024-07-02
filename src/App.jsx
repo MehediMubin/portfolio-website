@@ -1,4 +1,3 @@
-
 import Achievement from "./components/Achievement";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
@@ -9,18 +8,11 @@ import Navbar from "./components/Navbar";
 import Skills from "./components/Skills";
 
 const App = () => {
-    return (
-        <div className="font-custom">
-            <Navbar />
-            <Header />
-            <Skills />
-            <Education/>
-            <Experience/>
-            <Achievement/>
-            <Contact/>
-            <Footer/>
-        </div>
-    );
+   return (
+      <div className="font-custom">
+         <h1>Something </h1>
+      </div>
+   );
 };
 
 export default App;

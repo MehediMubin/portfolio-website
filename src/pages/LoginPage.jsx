@@ -1,26 +1,14 @@
 import { jwtDecode } from "jwt-decode";
-import React, { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 
-interface FormData {
-   username: string;
-   password: string;
-}
 
-export interface jwtPayload {
-   username: string;
-   exp: number;
-   iat: number;
-   role: string;
-}
-
-const Page = () => {
-   const { register, handleSubmit } = useForm<FormData>();
+const LoginPage = () => {
+   const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
 
-   const onSubmit: SubmitHandler<FormData> = async (data) => {
+   const onSubmit = async (data) => {
       console.log(data);
 
       try {
@@ -40,7 +28,7 @@ const Page = () => {
          const token = responseData?.data?.accessToken;
          localStorage.setItem("token", token);
          // decode the token and check if the user is an admin
-         const decodedToken: jwtPayload = jwtDecode(token);
+         const decodedToken = jwtDecode(token);
          console.log(decodedToken);
          toast.success("Logged in successfully.");
          navigate("/dashboard");
@@ -107,4 +95,4 @@ const Page = () => {
    );
 };
 
-export default Page;
+export default LoginPage;
