@@ -1,34 +1,20 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { useLoginMutation } from "../redux/features/auth/authApi";
 
 const LoginPage = () => {
    const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
+   const [login, { data, error }] = useLoginMutation();
 
    const onSubmit = async (data) => {
       console.log(data);
-
       try {
-         const response = await fetch(`http://localhost:5000/api/auth/login`, {
-            method: "POST",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-         });
-
-         const responseData = await response.json();
-         if (!responseData.success) {
-            toast.error(responseData.message);
-            return;
-         }
-         const token = responseData?.data?.accessToken;
-         localStorage.setItem("token", token);
-         toast.success("Logged in successfully.");
+         await login(data);
          navigate("/dashboard");
       } catch (error) {
-         toast.error("An error occurred. Please try again later.");
+         toast.error("Invalid credentials");
       }
    };
 
