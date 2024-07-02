@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
@@ -8,7 +9,7 @@ const DashboardLayout = () => {
       setIsSidebarOpen(false);
    };
    return (
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-screen bg-gray-100 font-custom">
          {/* Sidebar */}
          <div
             className={`bg-blue-800 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform ${
@@ -16,43 +17,43 @@ const DashboardLayout = () => {
             } md:relative md:translate-x-0 transition duration-200 ease-in-out`}
          >
             {/* Logo */}
-            <a
-               href="#"
+            <Link
+               to="/dashboard"
                className="text-white flex items-center space-x-2 px-4"
                onClick={handleSidebarLinkClick}
             >
                <span className="text-2xl font-bold">Dashboard</span>
-            </a>
+            </Link>
             {/* Nav */}
             <nav>
-               <a
-                  href="#"
+               <Link
+                  to="/create-blog-post"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
-                  Home
-               </a>
-               <a
-                  href="#"
+                  Add Blog Post
+               </Link>
+               <Link
+                  to="/add-experience"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
-                  About
-               </a>
-               <a
-                  href="#"
+                  Add Experience
+               </Link>
+               <Link
+                  to="/add-project"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
-                  Services
-               </a>
-               <a
-                  href="#"
+                  Add Projects
+               </Link>
+               <Link
+                  to="/add-skill"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
-                  Contact
-               </a>
+                  Add Skill
+               </Link>
             </nav>
          </div>
 
