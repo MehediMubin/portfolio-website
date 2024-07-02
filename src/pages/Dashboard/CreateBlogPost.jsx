@@ -54,7 +54,7 @@ const CreateBlogPost = () => {
             </div>
             <div className="flex items-center justify-between">
                <button
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-8 py-3 mb-5 rounded focus:outline-none focus:shadow-outline"
+                  className="bg-indigo-600 hover:bg-indigo-700  text-white font-bold px-8 py-3 mb-5 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
                >
                   Post Blog
