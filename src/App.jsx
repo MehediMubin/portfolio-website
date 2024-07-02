@@ -1,4 +1,4 @@
-import React from "react";
+
 import Achievement from "./components/Achievement";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
