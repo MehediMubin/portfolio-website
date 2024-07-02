@@ -1,14 +1,31 @@
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 const CreateBlogPost = () => {
-   const {
-      register,
-      handleSubmit,
-   } = useForm();
+   const { register, handleSubmit } = useForm();
 
-   const onSubmit = (data) => {
-      console.log(data);
-      
+   const onSubmit = async (data) => {
+      try {
+         const token = localStorage.getItem("token"); // Retrieve the token from localStorage
+         const response = await fetch(
+            "http://localhost:5000/api/blogs/create",
+            {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `${token}`,
+               },
+               body: JSON.stringify(data),
+            }
+         );
+         const responseData = await response.json();
+         console.log(responseData);
+         // Handle success response
+         toast.success("Blog posted successfully!");
+      } catch (error) {
+         console.error("Error posting blog:", error);
+         // Handle error here
+      }
    };
 
    return (
