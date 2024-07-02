@@ -1,8 +1,6 @@
-import { jwtDecode } from "jwt-decode";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-
 
 const LoginPage = () => {
    const { register, handleSubmit } = useForm();
@@ -27,9 +25,6 @@ const LoginPage = () => {
          }
          const token = responseData?.data?.accessToken;
          localStorage.setItem("token", token);
-         // decode the token and check if the user is an admin
-         const decodedToken = jwtDecode(token);
-         console.log(decodedToken);
          toast.success("Logged in successfully.");
          navigate("/dashboard");
       } catch (error) {
