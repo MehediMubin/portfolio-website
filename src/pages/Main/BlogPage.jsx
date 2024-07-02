@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../../components/Dashboard/Blog";
+import Loading from "../../components/Loading";
 
 const BlogPage = () => {
    const [blogs, setBlogs] = useState([]);
+   const [isLoading, setIsLoading] = useState(false);
 
    useEffect(() => {
       const fetchBlogs = async () => {
+         setIsLoading(true);
          try {
             const token = localStorage.getItem("token");
             const response = await fetch("http://localhost:5000/api/blogs", {
@@ -24,6 +27,8 @@ const BlogPage = () => {
             }
          } catch (error) {
             console.error("Error fetching blogs:", error);
+         } finally {
+            setIsLoading(false);
          }
       };
 
@@ -38,13 +43,17 @@ const BlogPage = () => {
          >
             Create New Blog
          </Link>
-         {blogs.map((blog) => (
-            <Blog
-               key={blog._id} // Assuming each blog has a unique 'id'
-               title={blog.title}
-               description={blog.description}
-            />
-         ))}
+         {isLoading ? (
+            <Loading /> // Step 3: Display LoadingComponent while loading
+         ) : (
+            blogs.map((blog) => (
+               <Blog
+                  key={blog.id}
+                  title={blog.title}
+                  description={blog.description}
+               />
+            ))
+         )}
       </div>
    );
 };
