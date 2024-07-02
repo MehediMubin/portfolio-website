@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -27,28 +26,35 @@ const DashboardLayout = () => {
             {/* Nav */}
             <nav>
                <Link
-                  to="/create-blog-post"
+                  to="/dashboard/overview"
+                  className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
+                  onClick={handleSidebarLinkClick}
+               >
+                  Overview
+               </Link>
+               <Link
+                  to="/dashboard/create-blog-post"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
                   Add Blog Post
                </Link>
                <Link
-                  to="/add-experience"
+                  to="/dashboard/add-experience"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
                   Add Experience
                </Link>
                <Link
-                  to="/add-project"
+                  to="/dashboard/add-project"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
                   Add Projects
                </Link>
                <Link
-                  to="/add-skill"
+                  to="/dashboard/add-skill"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
@@ -76,8 +82,8 @@ const DashboardLayout = () => {
                </div>
             </header>
             <main className="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
-               <div className="container mx-auto px-6 py-8">
-                  <h3 className="text-gray-700 text-3xl font-medium">
+               <div className="container mx-auto px-6 py-3">
+                  <h3 className="text-gray-700 text-3xl font-medium mb-4">
                      Dashboard
                   </h3>
                   <Outlet />
