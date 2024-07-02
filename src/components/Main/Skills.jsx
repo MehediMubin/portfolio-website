@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import { AiFillThunderbolt } from "react-icons/ai";
-import skills from "../assets/Skills.json";
+// import skills from "../assets/Skills.json";
 
 const Skills = () => {
    return (

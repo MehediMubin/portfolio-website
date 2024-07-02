@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import experience from "../assets/Experience.json";
+// import experience from "../assets/Experience.json";
 
 const Experience = () => {
     return (

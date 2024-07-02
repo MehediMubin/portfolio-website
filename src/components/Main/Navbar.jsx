@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../assets/signature.png";
+import image from "../../assets/signature.png";
 
 const Navbar = () => {
    return (

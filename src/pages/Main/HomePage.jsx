@@ -1,10 +1,9 @@
-
-import Achievement from "../../components/Achievement";
-import Contact from "../../components/Contact";
-import Education from "../../components/Education";
-import Experience from "../../components/Experience";
-import Header from "../../components/Header";
-import Skills from "../../components/Skills";
+import Achievement from "../../components/Main/Achievement"
+import Contact from "../../components/Main/Contact";
+import Experience from "../../components/Main/Experience";
+import Education from "../../components/Main/Education";
+import Header from "../../components/Main/Header";
+import Skills from "../../components/Main/Skills";
 
 const Home = () => {
    return (

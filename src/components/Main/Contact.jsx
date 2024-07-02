@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import contact from "../assets/contact.json";
+// import contact from "../assets/contact.json";
 
 const Contact = () => {
     const handleSubmit = (e) => {

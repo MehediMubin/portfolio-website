@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import achievement from "../assets/achievement.json";
+// import achievement from "../assets/achievement.json";
 
 import { AiFillTrophy } from "react-icons/ai";
 

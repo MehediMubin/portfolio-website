@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
-import programmer from "../assets/programmer.json";
+import programmer from "../../assets/programmer.json";
 
 const Header = () => {
    return (
