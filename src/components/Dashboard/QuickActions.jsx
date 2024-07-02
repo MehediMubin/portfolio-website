@@ -7,7 +7,7 @@ const QuickActions = () => (
          <ActionButton color="blue" text="Add Blog Post" />
          <ActionButton color="green" text="Add Experience" />
          <ActionButton color="purple" text="Add Project" />
-         <ActionButton color="yellow" text="Add Skill" />a
+         <ActionButton color="yellow" text="Add Skill" />
       </div>
    </div>
 );
