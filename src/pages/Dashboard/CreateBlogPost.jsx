@@ -23,7 +23,6 @@ const CreateBlogPost = () => {
          toast.success("Blog posted successfully!");
       } catch (error) {
          console.error("Error posting blog:", error);
-         // Handle error here
       }
    };
 

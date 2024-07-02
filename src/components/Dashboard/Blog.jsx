@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FiEdit, FiTrash } from "react-icons/fi";
 
 const Blog = ({ title, description }) => {
@@ -10,7 +11,10 @@ const Blog = ({ title, description }) => {
                      {title}
                   </h2>
                   <p className="mt-2 text-sm md:text-base text-gray-600">
-                     {description}
+                     {/* show only the first 100 characters of description */}
+                     {description.length > 100
+                        ? `${description.substring(0, 100)}...`
+                        : description}
                   </p>
                </div>
                <div className="flex gap-2">

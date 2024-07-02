@@ -1,7 +1,35 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../../components/Dashboard/Blog";
 
 const BlogPage = () => {
+   const [blogs, setBlogs] = useState([]);
+
+   useEffect(() => {
+      const fetchBlogs = async () => {
+         try {
+            const token = localStorage.getItem("token");
+            const response = await fetch("http://localhost:5000/api/blogs", {
+               method: "GET",
+               headers: {
+                  Authorization: `${token}`,
+               },
+            });
+            const data = await response.json();
+            if (response.ok) {
+               console.log(data);
+               setBlogs(data.data);
+            } else {
+               throw new Error(data.message || "Failed to fetch blogs");
+            }
+         } catch (error) {
+            console.error("Error fetching blogs:", error);
+         }
+      };
+
+      fetchBlogs();
+   }, []);
+
    return (
       <div className="min-h-screen mt-5">
          <Link
@@ -10,26 +38,13 @@ const BlogPage = () => {
          >
             Create New Blog
          </Link>
-         <Blog
-            title="How to be a Good Programmer"
-            description="Blah Blah Blah"
-         />
-         <Blog
-            title="How to be a Good Programmer"
-            description="Blah Blah Blah"
-         />
-         <Blog
-            title="How to be a Good Programmer"
-            description="Blah Blah Blah"
-         />
-         <Blog
-            title="How to be a Good Programmer"
-            description="Blah Blah Blah"
-         />
-         <Blog
-            title="How to be a Good Programmer"
-            description="Blah Blah Blah"
-         />
+         {blogs.map((blog) => (
+            <Blog
+               key={blog._id} // Assuming each blog has a unique 'id'
+               title={blog.title}
+               description={blog.description}
+            />
+         ))}
       </div>
    );
 };
