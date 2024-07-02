@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
+
 // Assuming ActionButton is defined in your project
-const ActionButton = ({ color, text }) => {
+const ActionButton = ({ color, text, url }) => {
    // Define a basic color mapping to CSS colors
    const colorMap = {
       green: "#4CAF50",
@@ -12,7 +14,8 @@ const ActionButton = ({ color, text }) => {
    const buttonColor = colorMap[color] || "#9E9E9E";
 
    return (
-      <button
+      <Link
+         to={url}
          style={{
             backgroundColor: buttonColor,
             color: "white",
@@ -22,7 +25,7 @@ const ActionButton = ({ color, text }) => {
          }}
       >
          {text}
-      </button>
+      </Link>
    );
 };
 
