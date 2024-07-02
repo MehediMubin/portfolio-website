@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../layouts/DashboardLayout";
 import MainLayout from "../layouts/MainLayout";
+import AddExperience from "../pages/Dashboard/AddExperience";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/create-blog-post",
             element: <CreateBlogPost />,
+         },
+         {
+            path: "/dashboard/add-experience",
+            element: <AddExperience />,
          },
       ],
    },
