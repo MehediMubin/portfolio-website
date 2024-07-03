@@ -1,4 +1,4 @@
-# Portfolio Website (Server)
+# Portfolio Website (Client)
 
 Welcome to my personal portfolio website! This site showcases my work, projects, and skills as a full-stack web developer. It serves as a digital resume and a platform to connect with potential employers and collaborators.
 
