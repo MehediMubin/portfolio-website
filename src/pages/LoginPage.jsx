@@ -13,17 +13,17 @@ const LoginPage = () => {
    const [login, { error }] = useLoginMutation();
 
    const onSubmit = async (data) => {
-      console.log(data);
+      const toastId = toast.loading("Logging in");
       try {
          const res = await login(data).unwrap();
          const token = res?.data?.accessToken;
          const user = verifyToken(token);
          dispatch(setUser({ user, token }));
 
+         toast.success("Login successful", { id: toastId, duration: 2000 });
          navigate("/dashboard");
-         toast.success("Login successful");
       } catch (error) {
-         toast.error("Invalid credentials");
+         toast.error("Invalid credentials", { id: toastId, duration: 2000 });
       }
    };
 
