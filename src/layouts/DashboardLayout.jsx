@@ -7,6 +7,7 @@ const DashboardLayout = () => {
    const handleSidebarLinkClick = () => {
       setIsSidebarOpen(false);
    };
+   const handleLogout = () => {};
    return (
       <div className="flex h-screen bg-gray-100 font-custom">
          {/* Sidebar */}
@@ -78,6 +79,12 @@ const DashboardLayout = () => {
                      ) : (
                         <FiMenu className="h-6 w-6 text-gray" /> // Apply similar styling to the menu icon for consistency
                      )}
+                  </button>
+                  <button
+                     onClick={handleLogout} // Add your logout function here
+                     className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-300 ease-in-out transform hover:-translate-y-1"
+                  >
+                     Logout
                   </button>
                </div>
             </header>
