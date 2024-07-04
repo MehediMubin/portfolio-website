@@ -1,13 +1,18 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
+import { logOut } from "../redux/features/auth/authSlice";
 
 const DashboardLayout = () => {
    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+   const dispatch = useDispatch();
    const handleSidebarLinkClick = () => {
       setIsSidebarOpen(false);
    };
-   const handleLogout = () => {};
+   const handleLogout = () => {
+      dispatch(logOut());
+   };
    return (
       <div className="flex h-screen bg-gray-100 font-custom">
          {/* Sidebar */}
