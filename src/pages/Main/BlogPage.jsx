@@ -37,12 +37,14 @@ const BlogPage = () => {
 
    return (
       <div className="min-h-screen mt-5">
-         <Link
-            to="/dashboard/create-blog-post"
-            className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-300 ease-in-out transform hover:-translate-y-1 mb-3"
-         >
-            Create New Blog
-         </Link>
+         <div className="flex justify-end">
+            <Link
+               to="/dashboard/create-blog-post"
+               className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-300 ease-in-out transform hover:-translate-y-1 mb-3"
+            >
+               Create New Blog
+            </Link>
+         </div>
          {isLoading ? (
             <Loading /> // Step 3: Display LoadingComponent while loading
          ) : (
