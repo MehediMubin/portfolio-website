@@ -82,7 +82,7 @@ const DashboardLayout = () => {
                   </button>
                   <button
                      onClick={handleLogout} // Add your logout function here
-                     className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg shadow transition duration-300 ease-in-out transform hover:-translate-y-1"
+                     className="ml-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg"
                   >
                      Logout
                   </button>
