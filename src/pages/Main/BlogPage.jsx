@@ -6,8 +6,13 @@ import { useGetAllBlogsQuery } from "../../redux/features/blog/blogApi";
 
 const BlogPage = () => {
    const [blogs, setBlogs] = useState([]);
-   const [isLoading, setIsLoading] = useState(false);
-   const { data } = useGetAllBlogsQuery();
+   const { data, isLoading } = useGetAllBlogsQuery();
+
+   useEffect(() => {
+      if (data?.data) {
+         setBlogs(data.data);
+      }
+   }, [data]);
 
    return (
       <div className="min-h-screen mt-5">
