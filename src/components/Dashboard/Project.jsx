@@ -3,13 +3,13 @@ import { useState } from "react";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { useDeleteBlogMutation } from "../../redux/features/blog/blogApi";
+import { useDeleteProjectMutation } from "../../redux/features/project/projectApi";
 import DeleteConfirmationModal from "./DeleteConfirmationModal";
 
 const Project = ({ id, title, description, githubRepo }) => {
    const navigate = useNavigate();
    const [isModalOpen, setIsModalOpen] = useState(false);
-   const [deleteBlog] = useDeleteBlogMutation();
+   const [deleteProject] = useDeleteProjectMutation();
 
    const handleDeleteClick = () => {
       setIsModalOpen(true);
@@ -21,15 +21,15 @@ const Project = ({ id, title, description, githubRepo }) => {
 
    const handleDelete = () => {
       setIsModalOpen(false);
-      const toastId = toast.loading("Deleting blog post...");
+      const toastId = toast.loading("Deleting Project...");
       try {
-         deleteBlog(id);
-         toast.success("Blog post deleted successfully", {
+         deleteProject(id);
+         toast.success("Project deleted successfully", {
             id: toastId,
             duration: 2000,
          });
       } catch (error) {
-         toast.error("Failed to delete blog post", {
+         toast.error("Failed to delete Project", {
             id: toastId,
             duration: 2000,
          });

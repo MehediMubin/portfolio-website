@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { useAddProjectMutation } from "../../redux/features/project/projectApi";
 
 const AddProject = () => {
    const { register, handleSubmit } = useForm();
    const [addProject] = useAddProjectMutation();
+   const navigate = useNavigate();
 
    const onSubmit = async (data) => {
       const toastId = toast.loading("Adding project...");
@@ -14,6 +16,7 @@ const AddProject = () => {
             id: toastId,
             duration: 2000,
          });
+         navigate("/dashboard/projects", { replace: true });
       } catch (error) {
          toast.error("Failed to add project", {
             id: toastId,
