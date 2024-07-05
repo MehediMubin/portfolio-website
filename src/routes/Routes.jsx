@@ -6,11 +6,13 @@ import AddExperience from "../pages/Dashboard/AddExperience";
 import AddProject from "../pages/Dashboard/AddProject";
 import AddSkill from "../pages/Dashboard/AddSkill";
 import BlogEdit from "../pages/Dashboard/BlogEdit";
+import BlogPage from "../pages/Dashboard/BlogPage";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
+import ProjectEdit from "../pages/Dashboard/ProjectEdit";
+import ProjectPage from "../pages/Dashboard/ProjectPage";
 import LoginPage from "../pages/LoginPage";
-import BlogPage from "../pages/Main/BlogPage";
 import HomePage from "../pages/Main/HomePage";
 
 export const router = createBrowserRouter([
@@ -59,6 +61,14 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/add-experience",
             element: <AddExperience />,
+         },
+         {
+            path: "/dashboard/projects",
+            element: <ProjectPage />,
+         },
+         {
+            path: "/dashboard/projects/edit/:id",
+            element: <ProjectEdit />,
          },
          {
             path: "/dashboard/add-project",

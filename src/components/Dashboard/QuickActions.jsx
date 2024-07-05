@@ -17,7 +17,7 @@ const QuickActions = () => (
          <ActionButton
             color="purple"
             text="Add Project"
-            url="/dashboard/add-project"
+            url="/dashboard/projects"
          />
          <ActionButton
             color="yellow"

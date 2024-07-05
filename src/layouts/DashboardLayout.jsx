@@ -53,7 +53,7 @@ const DashboardLayout = () => {
                   Add Experience
                </Link>
                <Link
-                  to="/dashboard/add-project"
+                  to="/dashboard/projects"
                   className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700"
                   onClick={handleSidebarLinkClick}
                >
