@@ -6,7 +6,7 @@ import { useGetAllBlogsQuery } from "../../redux/features/blog/blogApi";
 
 const BlogPage = () => {
    const [blogs, setBlogs] = useState([]);
-   const { data, isLoading } = useGetAllBlogsQuery();
+   const { data, isLoading } = useGetAllBlogsQuery(); 
 
    useEffect(() => {
       if (data?.data) {

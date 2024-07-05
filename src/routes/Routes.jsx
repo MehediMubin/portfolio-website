@@ -5,6 +5,7 @@ import PrivateRoute from "../layouts/PrivateRoute";
 import AddExperience from "../pages/Dashboard/AddExperience";
 import AddProject from "../pages/Dashboard/AddProject";
 import AddSkill from "../pages/Dashboard/AddSkill";
+import BlogEdit from "../pages/Dashboard/BlogEdit";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/blogs",
             element: <BlogPage />,
+         },
+         {
+            path: "/dashboard/blogs/edit/:id",
+            element: <BlogEdit />,
          },
          {
             path: "/dashboard/add-experience",
