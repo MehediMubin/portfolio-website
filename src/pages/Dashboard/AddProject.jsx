@@ -1,19 +1,10 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const AddProject = () => {
-   const [project, setProject] = useState({
-      title: "",
-      description: "",
-      githubRepoUrl: "",
-   });
+   const { register, handleSubmit } = useForm();
 
-   const handleChange = (e) => {
-      setProject({ ...project, [e.target.name]: e.target.value });
-   };
-
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(project); // Here you would typically send the data to a server
+   const onSubmit = (data) => {
+      console.log(data);
    };
 
    return (
@@ -21,7 +12,7 @@ const AddProject = () => {
          <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
             Add Projects
          </h2>
-         <form onSubmit={handleSubmit} className="space-y-6">
+         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
                <label
                   htmlFor="title"
@@ -33,9 +24,8 @@ const AddProject = () => {
                   type="text"
                   name="title"
                   id="title"
-                  value={project.title}
-                  onChange={handleChange}
                   className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  {...register("title", { required: true })}
                   required
                />
             </div>
@@ -49,27 +39,25 @@ const AddProject = () => {
                <textarea
                   name="description"
                   id="description"
-                  value={project.description}
-                  onChange={handleChange}
                   rows="3"
                   className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  {...register("description", { required: true })}
                   required
                ></textarea>
             </div>
             <div>
                <label
-                  htmlFor="githubRepoUrl"
+                  htmlFor="githubRepo"
                   className="block text-sm font-medium text-gray-700"
                >
                   GitHub Repository URL
                </label>
                <input
                   type="url"
-                  name="githubRepoUrl"
-                  id="githubRepoUrl"
-                  value={project.githubRepoUrl}
-                  onChange={handleChange}
+                  name="githubRepo"
+                  id="githubRepo"
                   className="mt-1 block w-full px-3 py-2 bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  {...register("githubRepo", { required: true })}
                   required
                />
             </div>
