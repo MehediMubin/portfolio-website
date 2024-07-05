@@ -10,7 +10,7 @@ const LoginPage = () => {
    const dispatch = useDispatch();
    const { register, handleSubmit } = useForm();
    const navigate = useNavigate();
-   const [login, { error }] = useLoginMutation();
+   const [login] = useLoginMutation();
 
    const onSubmit = async (data) => {
       const toastId = toast.loading("Logging in");
