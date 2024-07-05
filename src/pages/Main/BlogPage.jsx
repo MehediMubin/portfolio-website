@@ -2,38 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Blog from "../../components/Dashboard/Blog";
 import Loading from "../../components/Loading";
+import { useGetAllBlogsQuery } from "../../redux/features/blog/blogApi";
 
 const BlogPage = () => {
    const [blogs, setBlogs] = useState([]);
    const [isLoading, setIsLoading] = useState(false);
-
-   useEffect(() => {
-      const fetchBlogs = async () => {
-         setIsLoading(true);
-         try {
-            const token = localStorage.getItem("token");
-            const response = await fetch("http://localhost:5000/api/blogs", {
-               method: "GET",
-               headers: {
-                  Authorization: `${token}`,
-               },
-            });
-            const data = await response.json();
-            if (response.ok) {
-               console.log(data);
-               setBlogs(data.data);
-            } else {
-               throw new Error(data.message || "Failed to fetch blogs");
-            }
-         } catch (error) {
-            console.error("Error fetching blogs:", error);
-         } finally {
-            setIsLoading(false);
-         }
-      };
-
-      fetchBlogs();
-   }, []);
+   const { data } = useGetAllBlogsQuery();
 
    return (
       <div className="min-h-screen mt-5">
