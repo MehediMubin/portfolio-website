@@ -1,9 +1,40 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import { useDeleteBlogMutation } from "../../redux/features/blog/blogApi";
+import DeleteConfirmationModal from "./DeleteConfirmationModal";
 
 const Blog = ({ id, title, description }) => {
    const navigate = useNavigate();
+   const [isModalOpen, setIsModalOpen] = useState(false);
+   const [deleteBlog] = useDeleteBlogMutation();
+
+   const handleDeleteClick = () => {
+      setIsModalOpen(true);
+   };
+
+   const handleCloseModal = () => {
+      setIsModalOpen(false);
+   };
+
+   const handleDelete = () => {
+      setIsModalOpen(false);
+      const toastId = toast.loading("Deleting blog post...");
+      try {
+         deleteBlog(id);
+         toast.success("Blog post deleted successfully", {
+            id: toastId,
+            duration: 2000,
+         });
+      } catch (error) {
+         toast.error("Failed to delete blog post", {
+            id: toastId,
+            duration: 2000,
+         });
+      }
+   };
    const handleClick = () => {
       navigate(`/dashboard/blogs/edit/${id}`);
    };
@@ -29,9 +60,17 @@ const Blog = ({ id, title, description }) => {
                   >
                      <FiEdit size={20} />
                   </button>
-                  <button className="text-red-500 hover:text-red-700">
+                  <button
+                     onClick={handleDeleteClick}
+                     className="text-red-500 hover:text-red-700"
+                  >
                      <FiTrash size={20} />
                   </button>
+                  <DeleteConfirmationModal
+                     isOpen={isModalOpen}
+                     onClose={handleCloseModal}
+                     onDelete={handleDelete}
+                  />
                </div>
             </div>
          </div>
