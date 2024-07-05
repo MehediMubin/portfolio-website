@@ -9,6 +9,13 @@ const projectApi = baseApi.injectEndpoints({
          }),
          providesTags: ["Project"],
       }),
+      getSingleProject: builder.query({
+         query: (id) => ({
+            url: `/projects/${id}`,
+            method: "GET",
+         }),
+         providesTags: ["Project"],
+      }),
       addProject: builder.mutation({
          query: (body) => ({
             url: "/projects/create",
@@ -17,7 +24,20 @@ const projectApi = baseApi.injectEndpoints({
          }),
          invalidatesTags: ["Project"],
       }),
+      editProject: builder.mutation({
+         query: ({ id, data }) => ({
+            url: `/projects/edit/${id}`,
+            method: "PUT",
+            body: data,
+         }),
+         invalidatesTags: ["Project"],
+      }),
    }),
 });
 
-export const { useGetAllProjectsQuery, useAddProjectMutation } = projectApi;
+export const {
+   useGetAllProjectsQuery,
+   useAddProjectMutation,
+   useGetSingleProjectQuery,
+   useEditProjectMutation,
+} = projectApi;
