@@ -1,10 +1,25 @@
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
+import { useAddProjectMutation } from "../../redux/features/project/projectApi";
 
 const AddProject = () => {
    const { register, handleSubmit } = useForm();
+   const [addProject] = useAddProjectMutation();
 
-   const onSubmit = (data) => {
-      console.log(data);
+   const onSubmit = async (data) => {
+      const toastId = toast.loading("Adding project...");
+      try {
+         await addProject(data);
+         toast.success("Project added successfully", {
+            id: toastId,
+            duration: 2000,
+         });
+      } catch (error) {
+         toast.error("Failed to add project", {
+            id: toastId,
+            duration: 2000,
+         });
+      }
    };
 
    return (
