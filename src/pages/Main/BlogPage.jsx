@@ -29,7 +29,8 @@ const BlogPage = () => {
          ) : (
             blogs.map((blog) => (
                <Blog
-                  key={blog.id}
+                  key={blog._id}
+                  id={blog._id}
                   title={blog.title}
                   description={blog.description}
                />
