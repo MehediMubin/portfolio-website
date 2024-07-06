@@ -3,17 +3,20 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "sonner";
 import Loading from "../../components/Loading";
-import { useGetSingleExperienceQuery } from "../../redux/features/experience/experienceApi";
+import {
+   useEditExperienceMutation,
+   useGetSingleExperienceQuery,
+} from "../../redux/features/experience/experienceApi";
 import { months } from "../../utils/months";
 
 const ExperienceEdit = () => {
    const { id } = useParams();
    const { data, isLoading } = useGetSingleExperienceQuery(id);
-   //  const [editBlog] = useEditBlogMutation();
+   const [editExperience] = useEditExperienceMutation();
    const [experience, setExperience] = useState(null);
-   const [isCurrentRole, setIsCurrentRole] = useState(true);
-   const { register, handleSubmit, setValue, trigger } = useForm();
-   //  const navigate = useNavigate();
+   const [isCurrentRole, setIsCurrentRole] = useState(false);
+   const { register, handleSubmit, setValue } = useForm();
+   const navigate = useNavigate();
 
    const currentYear = new Date().getFullYear();
    const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
@@ -21,8 +24,9 @@ const ExperienceEdit = () => {
    useEffect(() => {
       if (data?.data) {
          setExperience(data.data);
+         setIsCurrentRole(experience?.endDate ? false : true);
       }
-   }, [data]);
+   }, [data, experience]);
 
    useEffect(() => {
       if (experience) {
@@ -30,29 +34,50 @@ const ExperienceEdit = () => {
          setValue("locationType", experience.locationType || "");
          setValue("startMonth", experience.startDate.month || "");
          setValue("startYear", experience.startDate.year || "");
-         setValue("endMonth", experience.endDate.month || "");
-         setValue("endYear", experience.endDate.year || "");
-         trigger(["startMonth", "startYear", "endMonth", "endYear"]);
+         setValue("endMonth", experience.endDate?.month || "July");
+         setValue("endYear", experience.endDate?.year || "2024");
       }
-   }, [experience, setValue, trigger]);
+   }, [experience, setValue]);
 
    const handleCurrentRoleChange = () => {
       setIsCurrentRole(!isCurrentRole);
    };
 
    const onSubmit = async (data) => {
-      // const toastId = toast.loading("Updating blog post...");
-      console.log(data);
+      // const toastId = toast.loading("Updating experience details...");
+      const experienceData = {
+         title: data.title ? data.title : "",
+         companyName: data.companyName ? data.companyName : "",
+         location: data.location ? data.location : "",
+         employmentType: data.employmentType ? data.employmentType : "",
+         locationType: data.locationType ? data.locationType : "",
+         startDate: {
+            month: data.startMonth ? data.startMonth : "",
+            year: data.startYear ? Number(data.startYear) : "",
+         },
+         endDate: {
+            month: isCurrentRole ? "July" : "",
+            year: isCurrentRole ? currentYear : "",
+         },
+         description: data.description ? data.description : "",
+      };
+      for (const key in experienceData) {
+         if (experienceData[key] === "") {
+            delete experienceData[key];
+         }
+      }
 
+      console.log(experienceData);
       // try {
-      //    await editBlog({ id, data }).unwrap();
-      //    toast.success("Blog post updated successfully", {
+      //    const res = await editExperience({ id, experienceData }).unwrap();
+      //    console.log(res);
+      //    toast.success("Experience updated successfully", {
       //       id: toastId,
       //       duration: 2000,
       //    });
-      //    navigate("/dashboard/blogs", { replace: true });
+      //    navigate("/dashboard/experiences", { replace: true });
       // } catch (error) {
-      //    toast.error("Failed to update blog post", {
+      //    toast.error("Failed to update experience", {
       //       id: toastId,
       //       duration: 2000,
       //    });

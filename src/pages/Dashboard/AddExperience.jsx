@@ -30,8 +30,8 @@ const AddExperience = () => {
             year: Number(data.startYear),
          },
          endDate: {
-            endMonth: isCurrentRole ? "" : data.endMonth,
-            endYear: isCurrentRole ? "" : Number(data.endYear),
+            endMonth: isCurrentRole ? "Present" : data.endMonth,
+            endYear: isCurrentRole ? currentYear : Number(data.endYear),
          },
          description: data.description,
       };
@@ -75,6 +75,7 @@ const AddExperience = () => {
                   type="text"
                   placeholder="Title"
                   {...register("title", { required: true })}
+                  required
                />
             </div>
 
@@ -90,6 +91,7 @@ const AddExperience = () => {
                   className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="employmentType"
                   {...register("employmentType", { required: true })}
+                  required
                >
                   <option>Please Select</option>
                   <option>Full-time</option>
@@ -113,6 +115,7 @@ const AddExperience = () => {
                   type="text"
                   placeholder="Company Name"
                   {...register("companyName", { required: true })}
+                  required
                />
             </div>
 
@@ -130,6 +133,7 @@ const AddExperience = () => {
                   type="text"
                   placeholder="Location"
                   {...register("location", { required: true })}
+                  required
                />
             </div>
 
@@ -145,6 +149,7 @@ const AddExperience = () => {
                   className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="locationType"
                   {...register("locationType", { required: true })}
+                  required
                >
                   <option>Please Select</option>
                   <option>On-site</option>
@@ -161,7 +166,6 @@ const AddExperience = () => {
                      checked={isCurrentRole}
                      className="form-checkbox text-blue-500"
                      onChange={handleCurrentRoleChange}
-                     {...register("isCurrentRole")}
                   />
                   <span className="ml-2 text-gray-700">
                      I am currently working in this role
@@ -183,6 +187,7 @@ const AddExperience = () => {
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="startMonth"
                      {...register("startMonth", { required: true })}
+                     required
                   >
                      {months.map((month, index) => (
                         <option key={index} value={month}>
@@ -202,6 +207,7 @@ const AddExperience = () => {
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="startYear"
                      {...register("startYear", { required: true })}
+                     required
                   >
                      {years.map((year) => (
                         <option key={year} value={year}>
@@ -272,7 +278,7 @@ const AddExperience = () => {
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="description"
                   placeholder="Description"
-                  {...register("description", { required: true })}
+                  {...register("description")}
                ></textarea>
             </div>
 
