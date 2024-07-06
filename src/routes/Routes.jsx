@@ -10,6 +10,7 @@ import BlogPage from "../pages/Dashboard/BlogPage";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
+import ExperiencePage from "../pages/Dashboard/ExperiencePage";
 import ProjectEdit from "../pages/Dashboard/ProjectEdit";
 import ProjectPage from "../pages/Dashboard/ProjectPage";
 import LoginPage from "../pages/LoginPage";
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/blogs/edit/:id",
             element: <BlogEdit />,
+         },
+         {
+            path: "/dashboard/experiences",
+            element: <ExperiencePage />,
          },
          {
             path: "/dashboard/add-experience",
