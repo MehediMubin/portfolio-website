@@ -44,7 +44,6 @@ const ExperienceEdit = () => {
    };
 
    const onSubmit = async (data) => {
-      // const toastId = toast.loading("Updating experience details...");
       const experienceData = {
          title: data.title ? data.title : "",
          companyName: data.companyName ? data.companyName : "",
@@ -68,6 +67,7 @@ const ExperienceEdit = () => {
       }
 
       console.log(experienceData);
+      // const toastId = toast.loading("Updating experience details...");
       // try {
       //    const res = await editExperience({ id, experienceData }).unwrap();
       //    console.log(res);

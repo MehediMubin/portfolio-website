@@ -30,8 +30,8 @@ const AddExperience = () => {
             year: Number(data.startYear),
          },
          endDate: {
-            endMonth: isCurrentRole ? "Present" : data.endMonth,
-            endYear: isCurrentRole ? currentYear : Number(data.endYear),
+            month: isCurrentRole ? "Present" : data.endMonth,
+            year: isCurrentRole ? currentYear : Number(data.endYear),
          },
          description: data.description,
       };
