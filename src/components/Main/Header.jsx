@@ -1,6 +1,7 @@
 import Lottie from "lottie-react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
+import MyPicture from "../../assets/images/my_picture.jpg";
 import programmer from "../../assets/programmer.json";
 
 const Header = () => {
@@ -65,8 +66,12 @@ const Header = () => {
                </a>
             </div>
          </div>
-         <div className="w-full md:w-3/6 p-1">
-            {/* <Lottie animationData={programmer} loop={true} /> */}
+         <div className="w-full md:w-3/6 p-1 flex justify-center items-center">
+            <img
+               src={MyPicture}
+               alt="Md. Mehedi Hasan"
+               className="rounded-full w-96 h-96 object-cover"
+            />
          </div>
       </div>
    );
