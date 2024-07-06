@@ -13,6 +13,7 @@ const AddExperience = () => {
 
    const currentYear = new Date().getFullYear();
    const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
+   years.unshift("Please Select");
 
    const handleCurrentRoleChange = () => {
       setIsCurrentRole(!isCurrentRole);
@@ -27,11 +28,11 @@ const AddExperience = () => {
          locationType: data.locationType,
          startDate: {
             month: data.startMonth,
-            year: Number(data.startYear),
+            year: data.startYear,
          },
          endDate: {
-            month: isCurrentRole ? "Present" : data.endMonth,
-            year: isCurrentRole ? currentYear : Number(data.endYear),
+            month: isCurrentRole ? "Please Select" : data.endMonth,
+            year: isCurrentRole ? "Please Select" : data.endYear,
          },
          description: data.description,
       };

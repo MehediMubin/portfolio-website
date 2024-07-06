@@ -20,22 +20,25 @@ const ExperienceEdit = () => {
 
    const currentYear = new Date().getFullYear();
    const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
+   years.unshift("Please Select");
 
    useEffect(() => {
       if (data?.data) {
          setExperience(data.data);
-         setIsCurrentRole(experience?.endDate ? false : true);
+         setIsCurrentRole(
+            experience?.endDate?.month === "Please Select" ? true : false
+         );
       }
    }, [data, experience]);
 
    useEffect(() => {
       if (experience) {
-         setValue("employmentType", experience.employmentType || "");
-         setValue("locationType", experience.locationType || "");
-         setValue("startMonth", experience.startDate.month || "");
-         setValue("startYear", experience.startDate.year || "");
-         setValue("endMonth", experience.endDate?.month || "July");
-         setValue("endYear", experience.endDate?.year || "2024");
+         setValue("employmentType", experience.employmentType);
+         setValue("locationType", experience.locationType);
+         setValue("startMonth", experience.startDate.month);
+         setValue("startYear", experience.startDate.year);
+         setValue("endMonth", experience.endDate.month);
+         setValue("endYear", experience.endDate.year);
       }
    }, [experience, setValue]);
 
@@ -44,6 +47,7 @@ const ExperienceEdit = () => {
    };
 
    const onSubmit = async (data) => {
+      console.log("Experience =>", experience.endDate.month);
       const experienceData = {
          title: data.title ? data.title : "",
          companyName: data.companyName ? data.companyName : "",
@@ -55,8 +59,8 @@ const ExperienceEdit = () => {
             year: data.startYear ? Number(data.startYear) : "",
          },
          endDate: {
-            month: isCurrentRole ? "July" : "",
-            year: isCurrentRole ? currentYear : "",
+            month: isCurrentRole ? "Please Select" : "",
+            year: isCurrentRole ? "Please Select" : "",
          },
          description: data.description ? data.description : "",
       };
@@ -66,7 +70,6 @@ const ExperienceEdit = () => {
          }
       }
 
-      console.log(experienceData);
       // const toastId = toast.loading("Updating experience details...");
       // try {
       //    const res = await editExperience({ id, experienceData }).unwrap();
