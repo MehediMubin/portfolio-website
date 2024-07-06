@@ -1,8 +1,6 @@
-import Lottie from "lottie-react";
 import { AiFillGithub } from "react-icons/ai";
 import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 import MyPicture from "../../assets/images/my_picture.jpg";
-import programmer from "../../assets/programmer.json";
 
 const Header = () => {
    return (
