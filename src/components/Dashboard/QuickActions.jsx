@@ -12,7 +12,7 @@ const QuickActions = () => (
          <ActionButton
             color="green"
             text="Add Experience"
-            url="/dashboard/add-experience"
+            url="/dashboard/experiences"
          />
          <ActionButton
             color="purple"
