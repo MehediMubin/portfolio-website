@@ -1,26 +1,16 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
+import { useAddExperienceMutation } from "../../redux/features/experience/experienceApi";
+import { months } from "../../utils/months";
 
 const AddExperience = () => {
    const [isCurrentRole, setIsCurrentRole] = useState(true);
-   const [startDate, setStartDate] = useState({ month: "", year: "" });
-   const [endDate, setEndDate] = useState({ month: "", year: "" });
+   const { register, handleSubmit } = useForm();
+   const [addExperience] = useAddExperienceMutation();
+   const navigate = useNavigate();
 
-   const months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-   ];
-
-   // Example: Generate years dynamically or use a static range
    const currentYear = new Date().getFullYear();
    const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
 
@@ -28,11 +18,45 @@ const AddExperience = () => {
       setIsCurrentRole(!isCurrentRole);
    };
 
-   // Add other state and handlers as needed
+   const onSubmit = async (data) => {
+      const experienceData = {
+         title: data.title,
+         employmentType: data.employmentType,
+         companyName: data.companyName,
+         location: data.location,
+         locationType: data.locationType,
+         startDate: {
+            month: data.startMonth,
+            year: Number(data.startYear),
+         },
+         endDate: {
+            endMonth: isCurrentRole ? "" : data.endMonth,
+            endYear: isCurrentRole ? "" : Number(data.endYear),
+         },
+         description: data.description,
+      };
+      const toastId = toast.loading("Adding experience...");
+      try {
+         await addExperience(experienceData);
+         toast.success("Experience added successfully", {
+            id: toastId,
+            duration: 2000,
+         });
+         navigate("/dashboard/experiences");
+      } catch (error) {
+         toast.error("Failed to add experience", {
+            id: toastId,
+            duration: 2000,
+         });
+      }
+   };
 
    return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-         <form className="w-full max-w-2xl bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+         <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="w-full max-w-2xl bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+         >
             <h2 className="block text-gray-700 text-xl font-bold mb-5">
                Add Experience
             </h2>
@@ -50,6 +74,7 @@ const AddExperience = () => {
                   id="title"
                   type="text"
                   placeholder="Title"
+                  {...register("title", { required: true })}
                />
             </div>
 
@@ -64,6 +89,7 @@ const AddExperience = () => {
                <select
                   className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="employmentType"
+                  {...register("employmentType", { required: true })}
                >
                   <option>Please Select</option>
                   <option>Full-time</option>
@@ -86,6 +112,7 @@ const AddExperience = () => {
                   id="companyName"
                   type="text"
                   placeholder="Company Name"
+                  {...register("companyName", { required: true })}
                />
             </div>
 
@@ -102,6 +129,7 @@ const AddExperience = () => {
                   id="location"
                   type="text"
                   placeholder="Location"
+                  {...register("location", { required: true })}
                />
             </div>
 
@@ -116,6 +144,7 @@ const AddExperience = () => {
                <select
                   className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="locationType"
+                  {...register("locationType", { required: true })}
                >
                   <option>Please Select</option>
                   <option>On-site</option>
@@ -132,6 +161,7 @@ const AddExperience = () => {
                      checked={isCurrentRole}
                      className="form-checkbox text-blue-500"
                      onChange={handleCurrentRoleChange}
+                     {...register("isCurrentRole")}
                   />
                   <span className="ml-2 text-gray-700">
                      I am currently working in this role
@@ -152,10 +182,7 @@ const AddExperience = () => {
                   <select
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="startMonth"
-                     value={startDate.month}
-                     onChange={(e) =>
-                        setStartDate({ ...startDate, month: e.target.value })
-                     }
+                     {...register("startMonth", { required: true })}
                   >
                      {months.map((month, index) => (
                         <option key={index} value={month}>
@@ -174,10 +201,7 @@ const AddExperience = () => {
                   <select
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="startYear"
-                     value={startDate.year}
-                     onChange={(e) =>
-                        setStartDate({ ...startDate, year: e.target.value })
-                     }
+                     {...register("startYear", { required: true })}
                   >
                      {years.map((year) => (
                         <option key={year} value={year}>
@@ -204,10 +228,7 @@ const AddExperience = () => {
                   <select
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="endMonth"
-                     value={endDate.month}
-                     onChange={(e) =>
-                        setEndDate({ ...endDate, month: e.target.value })
-                     }
+                     {...register("endMonth")}
                      disabled={isCurrentRole}
                   >
                      {months.map((month, index) => (
@@ -227,10 +248,7 @@ const AddExperience = () => {
                   <select
                      className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                      id="endYear"
-                     value={endDate.year}
-                     onChange={(e) =>
-                        setEndDate({ ...endDate, year: e.target.value })
-                     }
+                     {...register("endYear")}
                      disabled={isCurrentRole}
                   >
                      {years.map((year) => (
@@ -254,6 +272,7 @@ const AddExperience = () => {
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="description"
                   placeholder="Description"
+                  {...register("description", { required: true })}
                ></textarea>
             </div>
 

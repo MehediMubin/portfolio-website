@@ -10,6 +10,7 @@ import BlogPage from "../pages/Dashboard/BlogPage";
 import CreateBlogPost from "../pages/Dashboard/CreateBlogPost";
 import DashboardOverview from "../pages/Dashboard/DashboardOverview";
 import DashboardPage from "../pages/Dashboard/DashboardPage";
+import ExperienceEdit from "../pages/Dashboard/ExperienceEdit";
 import ExperiencePage from "../pages/Dashboard/ExperiencePage";
 import ProjectEdit from "../pages/Dashboard/ProjectEdit";
 import ProjectPage from "../pages/Dashboard/ProjectPage";
@@ -66,6 +67,10 @@ export const router = createBrowserRouter([
          {
             path: "/dashboard/add-experience",
             element: <AddExperience />,
+         },
+         {
+            path: "/dashboard/experiences/edit/:id",
+            element: <ExperienceEdit />,
          },
          {
             path: "/dashboard/projects",

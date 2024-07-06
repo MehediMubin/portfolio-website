@@ -43,7 +43,7 @@ const Experience = ({
       }
    };
    const handleClick = () => {
-      navigate(`/dashboard/blogs/edit/${id}`);
+      navigate(`/dashboard/experiences/edit/${id}`);
    };
 
    return (
