@@ -1,9 +1,9 @@
-import Achievement from "../../components/Main/Achievement"
+import Achievement from "../../components/Main/Achievement";
 import Contact from "../../components/Main/Contact";
-import Experience from "../../components/Main/Experience";
 import Education from "../../components/Main/Education";
 import Header from "../../components/Main/Header";
 import Skills from "../../components/Main/Skills";
+import ExperiencePage from "./ExperiencePage";
 
 const Home = () => {
    return (
@@ -11,7 +11,7 @@ const Home = () => {
          <Header />
          <Skills />
          <Education />
-         <Experience />
+         <ExperiencePage />
          <Achievement />
          <Contact />
       </div>
