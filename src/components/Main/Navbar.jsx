@@ -115,7 +115,7 @@ const Navbar = () => {
             <div className="navbar-end">
                <a
                   className="btn text-[#FF2E00] hover:bg-purple-700 hover:text-white"
-                  href="https://drive.google.com/file/d/1N5qjodC5td0-lQkVXs1GWIXbeqpyEUwC/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1aVklg_60__EWEKt7ho7E0wK2sGOZY-Wy/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                >
