@@ -12,7 +12,7 @@ const ExperiencePage = () => {
       if (data?.data) {
          setExperiences(data.data);
       }
-   }, [data]);
+   }, [data, experiences]);
 
    return (
       <div className="min-h-screen mt-5">
