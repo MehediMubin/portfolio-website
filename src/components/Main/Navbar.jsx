@@ -28,7 +28,10 @@ const Navbar = () => {
                      className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                   >
                      <li>
-                        <Link className="hover:text-[#FF2E00] mb-1" to="/">
+                        <Link
+                           className="hover:text-[#FF2E00] mb-1"
+                           to="/#header"
+                        >
                            Home
                         </Link>
                      </li>
@@ -105,16 +108,6 @@ const Navbar = () => {
                   <li>
                      <Link className="hover:text-[#FF2E00]" to="/#contact">
                         Contact Me
-                     </Link>
-                  </li>
-                  <li>
-                     <Link className="hover:text-[#FF2E00]" to="/blogs">
-                        Blogs
-                     </Link>
-                  </li>
-                  <li>
-                     <Link className="hover:text-[#FF2E00]" to="/login">
-                        Login
                      </Link>
                   </li>
                </ul>
