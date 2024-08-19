@@ -12,9 +12,9 @@ const Achievement = () => {
          <div className="w-full md:w-3/6 p-1">
             <Lottie animationData={achievement} loop={false} />
          </div>
-         <div className="text-center md:text-left md:w-4/6 px-10 w-full">
-            <h2 className="text-3xl uppercase rounded  mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
-               <p className=" mx-auto md:mx-0 flex space-x-2 justify-center items-center">
+         <div className="text-center md:text-left w-full md:w-4/6 px-5 md:px-10">
+            <h2 className="text-3xl uppercase rounded mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
+               <p className=" mx-auto md:mx-0 flex space-x-4 justify-center items-center">
                   <span className="text-primary">Achievements</span>
                   <AiFillTrophy className="text-[#E3CA00]" />
                </p>
