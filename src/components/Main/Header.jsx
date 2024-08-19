@@ -20,7 +20,7 @@ const Header = () => {
                coding and creativity.
             </p>
             <a
-               className="btn text-primary hover:bg-customPurple hover:text-white shadow-lg shadow-indigo-500/40 ease-in-out duration-300 px-8 py-4 mb-5"
+               className="btn text-primary hover:bg-customPurple hover:text-white shadow-lg shadow-indigo-500/40 ease-in-out duration-300 px-8 py-4 mb-5 border border-gray-300 rounded"
                href="https://drive.google.com/file/d/1aVklg_60__EWEKt7ho7E0wK2sGOZY-Wy/view?usp=sharing"
                target="_blank"
                rel="noreferrer"
