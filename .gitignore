@@ -1,3 +1,6 @@
+# ignore the TODO.txt file
+TODO.txt
+
 # Logs
 logs
 *.log
