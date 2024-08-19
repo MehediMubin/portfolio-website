@@ -54,7 +54,7 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                <a
-                  className="btn text-primary hover:bg-customPurple hover:text-white"
+                  className="btn text-primary hover:bg-customPurple hover:text-white border border-gray-300 rounded"
                   href="https://drive.google.com/file/d/1aVklg_60__EWEKt7ho7E0wK2sGOZY-Wy/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
