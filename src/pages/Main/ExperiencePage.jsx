@@ -26,7 +26,7 @@ const ExperiencePage = () => {
             >
                <div className="text-center md:text-left w-full md:w-4/6 px-2 md:px-10">
                   <h2 className="text-3xl uppercase rounded mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
-                     <span className="text-[#FF2E00] mx-auto md:mx-0">
+                     <span className="text-primary mx-auto md:mx-0">
                         Experiences
                      </span>
                   </h2>

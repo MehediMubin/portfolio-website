@@ -13,7 +13,7 @@ const Experience = ({
    return (
       <div className="">
          <div className="mb-3">
-            <h3 className="text-2xl tracking-wide font-semibold text-[#FF2E00]">
+            <h3 className="text-2xl tracking-wide font-semibold text-primary">
                {title}
             </h3>
             <h4 className="text-xl tracking-wider">{companyName}</h4>

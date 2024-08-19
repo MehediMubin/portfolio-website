@@ -12,7 +12,7 @@ const Skills = () => {
             <Lottie animationData={skills} loop={false} />
          </div>
          <div className="text-center md:text-left w-full md:w-4/6 p-10">
-            <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 ">
+            <h2 className="text-3xl uppercase rounded text-primary mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 ">
                Skills
             </h2>
             <p className="mb-3">
@@ -51,7 +51,7 @@ const Skills = () => {
                   Git | GitHub | Firebase | Vercel
                </span>
             </p>
-            <h3 className="mt-10 text-2xl text-[#FF2E00] mb-3 font-semibold tracking-wide">
+            <h3 className="mt-10 text-2xl text-primary mb-3 font-semibold tracking-wide">
                Proficient in
             </h3>
             <p className="mb-3 flex items-center gap-1 tracking-wider">

@@ -37,7 +37,7 @@ const Contact = () => {
             theme="light"
          />
          <div className="text-center md:text-left w-full md:w-4/6 px-10">
-            <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-20 font-semibold tracking-wide bg-gray-300 py-1 px-2">
+            <h2 className="text-3xl uppercase rounded text-primary mb-20 font-semibold tracking-wide bg-gray-300 py-1 px-2">
                Contact Me
             </h2>
             <ConnectWithMe />

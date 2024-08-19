@@ -4,7 +4,7 @@ import logo from "../../assets/logo.svg";
 const Education = () => {
    return (
       <div id="education" className="mb-20 m-3">
-         <h2 className="text-3xl uppercase rounded text-[#FF2E00] mb-8 font-semibold tracking-wider bg-gray-300 py-1 px-2">
+         <h2 className="text-3xl uppercase rounded text-primary mb-8 font-semibold tracking-wider bg-gray-300 py-1 px-2">
             Education
          </h2>
          <div className="md:flex items-center gap-5 shadow-md hover:shadow-blue-500/50 py-5 mb-6 pl-3 transition ease-in-out delay-400">
