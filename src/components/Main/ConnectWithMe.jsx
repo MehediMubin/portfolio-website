@@ -4,7 +4,9 @@ import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 const ConnectWithMe = () => {
    return (
       <div>
-         <h3 className="mb-3">Connect With Me</h3>
+         <h3 className="mb-4 font-bold ms-1">
+            Connect With Me
+         </h3>
          <a
             className="btn text-[#0866FF] hover:bg-purple-700 hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-5 py-3 rounded mr-3"
             href="https://www.facebook.com/mehedihasan.mubin"
