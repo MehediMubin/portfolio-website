@@ -11,9 +11,9 @@ const Skills = () => {
          <div className=" w-full md:w-3/6 p-2">
             <Lottie animationData={skills} loop={false} />
          </div>
-         <div className="text-center md:text-left w-full md:w-4/6 p-10">
-            <h2 className="text-3xl uppercase rounded text-primary mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 ">
-               Skills
+         <div className="text-center md:text-left w-full md:w-4/6 px-5 md:px-10">
+            <h2 className="text-3xl uppercase rounded mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
+               <span className="text-primary mx-auto md:mx-0">Skills</span>
             </h2>
             <p className="mb-3">
                <span className="font-semibold tracking-wide">
