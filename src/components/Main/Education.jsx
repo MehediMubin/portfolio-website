@@ -10,7 +10,7 @@ const Education = () => {
          <h2 className="text-3xl uppercase rounded mb-5 font-semibold tracking-wide bg-gray-300 py-1 px-2 flex items-center gap-5">
             <span className="text-primary mx-auto md:mx-0">Education</span>
          </h2>
-         <div className="md:flex items-center gap-10 shadow-md hover:shadow-blue-500/50 py-8 mb-6 pl-3 transition ease-in-out delay-400">
+         <div className="md:flex items-center gap-10 shadow-md hover:shadow-blue-500/50 py-8 mb-6 pl-3 transition ease-in-out delay-400 border border-gray-300 rounded">
             <img
                className="w-28 md:w-40 md:h-28 mx-auto md:mx-0 mb-5 md:mb-0"
                src={logo}
@@ -26,7 +26,7 @@ const Education = () => {
                <p className="text-md">Dhaka, Bangladesh</p>
             </div>
          </div>
-         <div className="md:flex items-center gap-14 shadow-md hover:shadow-blue-500/50 py-8 transition ease-in-out delay-400">
+         <div className="md:flex items-center gap-14 shadow-md hover:shadow-blue-500/50 py-8 transition ease-in-out delay-400 border border-gray-300 rounded ">
             <img
                className="w-28 md:w-40 md:h-28 mx-auto md:mx-0 mb-5 md:mb-0"
                src={image}
