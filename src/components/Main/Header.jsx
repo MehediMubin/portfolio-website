@@ -29,7 +29,7 @@ const Header = () => {
             </a>
             <ConnectWithMe />
          </div>
-         <div className="w-full md:w-3/6 p-1 flex justify-center items-center">
+         <div className="w-full md:w-3/6 p-1 flex justify-center items-center mt-20 lg:mt-4">
             <img
                src={MyPicture}
                alt="Md. Mehedi Hasan's Picture"
