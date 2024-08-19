@@ -4,7 +4,7 @@ export default {
    theme: {
       extend: {
          colors: {
-            "custom-focus": "#FF2E00",
+            "primary": "#FF2E00",
          },
       },
       fontFamily: {
