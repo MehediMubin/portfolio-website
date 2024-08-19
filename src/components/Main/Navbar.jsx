@@ -43,7 +43,7 @@ const Navbar = () => {
                      </ul>
                   )}
                </div>
-               <a className="normal-case text-xl hover:cursor-pointer" href="/">
+               <a className="normal-case text-xl hover:cursor-pointer mt-0.5" href="/">
                   <img className="w-60" src={image} alt="" />
                </a>
             </div>
