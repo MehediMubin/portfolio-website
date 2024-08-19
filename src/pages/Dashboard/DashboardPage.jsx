@@ -12,7 +12,7 @@ const DashboardPage = () => {
          <div className="flex justify-between items-center">
             <Link
                to="/dashboard/overview"
-               className="btn text-primary hover:bg-purple-700 hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-8 py-4 mb-5"
+               className="btn text-primary hover:bg-customPurple hover:text-white shadow-md shadow-indigo-500/40 ease-in-out duration-500 px-8 py-4 mb-5"
             >
                Get Started
             </Link>

@@ -4,7 +4,8 @@ export default {
    theme: {
       extend: {
          colors: {
-            "primary": "#FF2E00",
+            primary: "#FF2E00",
+            customPurple: "#663ED5",
          },
       },
       fontFamily: {
